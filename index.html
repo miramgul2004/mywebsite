@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пластикалық Хирургия</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <h1>MR clinic </h1>
+      <h1>Пластикалық хирургия – денсаулық кепілі</h1>
+      <p>Сіздің сұлулық арманыңыз – біздің міндетіміз!</p>
+  <div class="hero-buttons">
+    <a href="#about" class="btn">Біз туралы</a>
+    <a href="#services" class="btn">Қызметтер</a>
+    <a href="#doctors" class="btn">Дәрігерлер</a>
+    <a href="#pricing" class="btn">Прайс</a>
+    <a href="reviews" class="btn">Пікірлер</a>
+    <a href="#contact" class="btn">Нөмір Қалдыру</a>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="about-title">Біз туралы</h2>
+      <p class="about-intro">
+        Біздің пластикалық хирургия клиникасы – бұл сұлулық пен денсаулық саласындағы жаңа деңгей. Біз заманауи технологияларды пайдалана отырып, пациенттеріміздің армандарын шындыққа айналдырудамыз.
+      </p>
+      <div class="about-content">
+        <div class="about-row">
+          <div class="about-image">
+            <img src="img/clinic1.jpg" alt="Клиника сырты">
+          </div>
+          <div class="about-text">
+            <h3>Тарихымыз</h3>
+            <p>Клиника 2010 жылы пластикалық хирургия саласындағы үздік мамандардың бірігуімен құрылды. Біз клиенттерге сапалы қызмет көрсету арқылы сенімділік пен сұлулыққа қол жеткіземіз.</p>
+          </div>
+        </div>
+        <div class="about-row reverse">
+          <div class="about-image">
+            <img src="img/clinic2.jpg" alt="Хирургиялық бөлме">
+          </div>
+          <div class="about-text">
+            <h3>Миссиямыз</h3>
+            <p>Біздің миссиямыз – адамдардың өз-өзіне сенімділігін арттыру, денсаулығын жақсарту және ерекше қызмет көрсету арқылы олардың өмір сапасын көтеру.</p>
+          </div>
+        </div>
+        <div class="about-row">
+          <div class="about-image">
+            <img src="img/clinic3.jpg" alt="Дәрігерлер командасы">
+          </div>
+          <div class="about-text">
+            <h3>Жетістіктеріміз</h3>
+            <p>Біз 20,000-нан астам сәтті операция жасап, халықаралық деңгейдегі сертификаттарға ие болдық. Клиенттеріміздің ризашылығы – біздің басты жетістігіміз.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="services" class="services">
+    <div class="container">
+      <!-- Бөлімнің тақырыбы -->
+      <h2 class="services-title">Біздің Қызметтер</h2>
+      <p class="services-intro">
+        Сіздің сұлулығыңыз бен сенімділігіңіз үшін ең заманауи және сапалы қызметтерді ұсынамыз.
+      </p>
+            <div class="services-grid">
+              <!-- Бет Лифтинг -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="img/facelift.jpg" alt="Бет Лифтинг">
+                </div>
+                <h3>Бет Лифтинг</h3>
+                <p>Теріні тарту арқылы жас көрініске жету.</p>
+                <button class="btn-more" data-service="facelift">Толығырақ</button>
+              </div>
+        
+              <!-- Мұрын Пластикасы -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="img/rhinoplasty.jpg" alt="Мұрын Пластикасы">
+                </div>
+                <h3>Мұрын Пластикасы</h3>
+                <p>Мұрын формасын эстетикалық түзету.</p>
+                <button class="btn-more" data-service="rhinoplasty">Толығырақ</button>
+              </div>
+        
+              <!-- Липосакция -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="img/liposuction.jpg" alt="Липосакция">
+                </div>
+                <h3>Липосакция</h3>
+                <p>Артық майларды кетірудің заманауи әдісі.</p>
+                <button class="btn-more" data-service="liposuction">Толығырақ</button>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Модаль Терезе -->
+          <div id="details-modal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h3 id="details-title"></h3>
+              <p id="details-description"></p>
+            </div>
+          </div>
+        </section>
+        
+  
+        <section id="test-section" class="test-section">
+          <div class="container">
+            <h2 class="test-title">Сізге қандай процедура қажет?</h2>
+            <p class="test-description">
+              Қарапайым сұрақтарға жауап беріп, сізге ең қолайлы процедураны анықтаңыз!
+            </p>
+            <button class="btn-test-start" onclick="startTest()">Тесті бастау</button>
+          </div>
+        
+          <!-- Тест Модаль Терезесі -->
+          <div id="test-modal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn" onclick="closeTest()">&times;</span>
+              <h3>Тест</h3>
+              <div id="test-container">
+                <!-- Сұрақтар осында қосылады -->
+              </div>
+              <button id="next-question" class="btn-next" onclick="nextQuestion()">Келесі</button>
+            </div>
+          </div>
+        </section>
+        
+    
+      
+      
+      
+  
+      <!-- Жеңілдіктер бөлімі -->
+      <section id="discounts" class="discounts">
+        <div class="container">
+          <h2 class="discount-title">Бүгінгі арнайы ұсыныстар</h2>
+          <div class="discount-slider">
+            <div class="discount-card" data-discount="20%">
+              <h3>Липосакция</h3>
+              <p>-20% жеңілдік</p>
+              <button class="btn-discount">Толығырақ</button>
+            </div>
+            <div class="discount-card" data-discount="Тегін кеңес">
+              <h3>Бет Лифтинг</h3>
+              <p>Алдын ала кеңес тегін</p>
+              <button class="btn-discount">Толығырақ</button>
+            </div>
+            <div class="discount-card" data-discount="15%">
+              <h3>Мұрын Пластикасы</h3>
+              <p>-15% жеңілдік</p>
+              <button class="btn-discount">Толығырақ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    
+      <section id="doctors" class="doctors">
+        <div class="container">
+          <h2 class="doctors-title">Біздің Дәрігерлер</h2>
+          <p class="doctors-intro">Сізге ең үздік медициналық көмек көрсету үшін арнайы мамандар командасы.</p>
+          <div class="doctors-list">
+            <!-- Дәрігер 1 -->
+            <div class="doctor-profile">
+              <div class="doctor-photo">
+                <img src="img/doctor1.jpg" alt="Дәрігер Жұмабаев">
+              </div>
+              <div class="doctor-details">
+                <h3>Дәрігер Жұмабаев</h3>
+                <p class="doctor-specialty">Пластикалық хирург</p>
+                <p class="doctor-bio">
+                  15 жылдық тәжірибесі бар жоғары санатты маман. Пластикалық хирургиядағы заманауи әдістерді қолданады.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Дәрігер 2 -->
+            <div class="doctor-profile reverse">
+              <div class="doctor-photo">
+                <img src="img/doctor2.jpg" alt="Дәрігер Махаббат">
+              </div>
+              <div class="doctor-details">
+                <h3>Дәрігер Махаббат</h3>
+                <p class="doctor-specialty">Косметолог</p>
+                <p class="doctor-bio">
+                  Клиенттерге тері күтімі және жасарту процедуралары бойынша 10 жылдық тәжірибесімен көмектеседі.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Дәрігер 3 -->
+            <div class="doctor-profile">
+              <div class="doctor-photo">
+                <img src="img/doctor3.jpg" alt="Дәрігер Даулет">
+              </div>
+              <div class="doctor-details">
+                <h3>Дәрігер Даулет</h3>
+                <p class="doctor-specialty">Эстетикалық хирург</p>
+                <p class="doctor-bio">
+                  Эстетикалық хирургия саласындағы танымал маман, дене пішінін қалпына келтіру бойынша тәжірибелі.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="pricing" class="pricing">
+        <div class="container">
+          <h2 class="pricing-title">Қызметтер Бағасы</h2>
+          <p class="pricing-intro">
+            Қызметтеріміздің бағаларын қарап, ең қолайлысын таңдаңыз!
+          </p>
+          <div class="pricing-columns">
+            <!-- Баған 1 -->
+            <div class="pricing-column basic">
+              <div class="pricing-header">
+                <h3>Бет Лифтинг</h3>
+                <p>Жасарту және теріні тарту</p>
+              </div>
+              <div class="pricing-price">
+                <p class="price-main">250,000 ₸</p>
+                <p class="price-original">300,000 ₸</p>
+              </div>
+              <div class="pricing-footer">
+                <button class="btn-select">Таңдау</button>
+              </div>
+            </div>
+      
+            <!-- Баған 2 -->
+            <div class="pricing-column premium">
+              <div class="pricing-header">
+                <h3>Мұрын Пластикасы</h3>
+                <p>Эстетикалық түзету және форманы жақсарту</p>
+              </div>
+              <div class="pricing-price">
+                <p class="price-main">300,000 ₸</p>
+                <p class="price-original">350,000 ₸</p>
+              </div>
+              <div class="pricing-footer">
+                <button class="btn-select">Таңдау</button>
+              </div>
+            </div>
+      
+            <!-- Баған 3 -->
+            <div class="pricing-column advanced">
+              <div class="pricing-header">
+                <h3>Липосакция</h3>
+                <p>Дене пішінін жақсарту және артық майды кетіру</p>
+              </div>
+              <div class="pricing-price">
+                <p class="price-main">400,000 ₸</p>
+                <p class="price-original">450,000 ₸</p>
+              </div>
+              <div class="pricing-footer">
+                <button class="btn-select">Таңдау</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section id="reviews" class="reviews">
+        <div class="container">
+          <h2 class="reviews-title">Пікірлер</h2>
+          <p class="reviews-intro">
+            Біздің клиенттеріміздің пікірлерін оқыңыз немесе өз пікіріңізді қалдырыңыз.
+          </p>
+      
+          <!-- Пікірлер кітап -->
+          <div class="review-book">
+            <div class="review-page active">
+              <p class="review-text">
+                "Бет лифтинг процедурасы өте керемет өтті. Нәтижеге риза болдым!"
+              </p>
+              <p class="review-author">- Алия, 35 жас</p>
+            </div>
+            <div class="review-page">
+              <p class="review-text">
+                "Мұрын пластикасы менің арманыма айналған еді. Жақсы жұмыс үшін алғысымды білдіремін!"
+              </p>
+              <p class="review-author">- Ермек, 28 жас</p>
+            </div>
+          </div>
+      
+          <!-- Басқару батырмалары -->
+          <div class="book-controls">
+            <button class="btn-prev">Алдыңғы</button>
+            <button class="btn-next">Келесі</button>
+          </div>
+      
+          <!-- Пікір қалдыру формасы -->
+          <div class="review-form">
+            <h3>Пікір қалдыру</h3>
+            <form id="review-form">
+              <textarea id="review-text" placeholder="Сіздің пікіріңіз" required></textarea>
+              <input type="text" id="review-author" placeholder="Атыңыз" required>
+              <button type="submit" class="btn-submit">Жіберу</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+
+     
+      
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="contact-title">Нөмір Қалдыру</h2>
+          <p class="contact-intro">Сізге хабарласу үшін төмендегі өрістерді толтырыңыз.</p>
+          <div class="contact-card">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="user-name">Атыңыз</label>
+                <input type="text" id="user-name" placeholder="Атыңызды енгізіңіз" required>
+              </div>
+              <div class="form-group">
+                <label for="user-phone">Телефон нөміріңіз</label>
+                <input type="tel" id="user-phone" placeholder="+7 XXX XXX XXXX" required>
+              </div>
+              <div class="form-group">
+                <label for="user-message">Қосымша ақпарат</label>
+                <textarea id="user-message" placeholder="Қосымша хабарлама қалдырыңыз (міндетті емес)"></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Жіберу</button>
+            </form>
+          </div>
+          <div id="success-message" class="success-message hidden">
+            Рақмет! Сіздің өтінішіңіз қабылданды.
+          </div>
+        </div>
+      </section>
+      
+
+
+ 
+  <footer>
+    <p>2024 © Пластикалық Хирургия Клиникасы. Барлық құқықтар қорғалған.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

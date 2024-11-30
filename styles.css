@@ -1,0 +1,935 @@
+/* Hero бөлімінің жалпы стилі */
+.hero {
+    position: relative;
+    background: url('img/clinic-bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Қараңғылық эффектісі */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .hero h1,
+  .hero p,
+  .hero-buttons {
+    z-index: 2;
+    position: relative;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1.5s ease-out;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+/* Hero бөліміндегі кнопкалар контейнері */
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Кнопкаларды орталыққа орналастыру */
+    gap: 15px; /* Кнопкалар арасындағы бос орын */
+    margin-top: 20px; /* Кнопкаларды мәтіннен бөлу */
+  }
+  
+  /* Кнопкалардың негізгі стилі */
+  .btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2); /* Мөлдір ақ фон */
+    border: 1px solid white; /* Ақ шекара */
+    border-radius: 5px; /* Дөңгеленген бұрыштар */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Жұмсақ көлеңке */
+  }
+  
+  /* Hover эффектісі */
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Толық ақ түске ауысады */
+    color: #333; /* Қара мәтін */
+    transform: scale(1.1); /* Кнопка көлемі үлкейеді */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Көлеңке ұлғаяды */
+  }
+  
+  /* Белсенді кнопка стилі */
+  .btn:active {
+    background-color: rgba(255, 255, 255, 0.7); /* Сәл күңгірт фон */
+    color: #000; /* Қанық қара мәтін */
+    transform: scale(0.95); /* Кнопка аздап қысымға ұшырайды */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Ішкі көлеңке */
+  }
+  
+  
+  
+  /* Анимациялар */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+ /* "Біз туралы" секциясының негізгі стилі */
+.about {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 3.5em; /* Тақырыпты үлкейту */
+  font-family: 'Playfair Display', serif; /* Сәнді шрифт */
+  color: #004d40;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  animation: fadeInDown 1.5s ease-out;
+}
+
+.about-intro {
+  font-size: 1.5em; /* Кіріспені үлкейту */
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.8; /* Жолдардың арақашықтығын арттыру */
+  font-family: 'Open Sans', sans-serif; /* Түсінікті әрі заманауи шрифт */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Контент стилі */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: slideIn 1.5s ease forwards;
+}
+
+.about-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Суреттер */
+.about-image {
+  flex: 1;
+  text-align: center;
+  animation: zoomIn 1.5s ease forwards;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Мәтін */
+.about-text {
+  flex: 1;
+  text-align: left;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.about-text h3 {
+  font-size: 2em; /* Тақырыпты үлкейту */
+  color: #00796b;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px; /* Әсемдік үшін әріп арақашықтығы */
+  text-transform: uppercase; /* Барлық әріптерді бас әріппен жазу */
+}
+
+.about-text p {
+  font-size: 1.2em; /* Параграфты үлкейту */
+  line-height: 1.8; /* Жол арақашықтығы */
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Анимациялар */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Жауаптылық */
+@media (max-width: 768px) {
+  .about-row {
+    flex-direction: column;
+  }
+
+  .about-row.reverse {
+    flex-direction: column;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+/* Қызметтер бөлімі */
+.services {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f0f8ff);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-title, .comparison-title, .test-title, .discount-title {
+  font-size: 2.8em;
+  color: #004d40;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.services-intro {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #999;
+}
+
+
+/* Қызмет карточкаларының торы */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Қызмет карточкалары */
+.service-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Сурет бөлімі */
+.service-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.service-image img:hover {
+  transform: scale(1.1);
+}
+
+/* Қызмет мәтіні */
+.service-card h3 {
+  font-size: 1.5em;
+  color: #00796b;
+}
+
+.service-card p {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Толығырақ батырмасы */
+.btn-more {
+  background: #00bcd4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-more:hover {
+  background: #0097a7;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Тест бөлімі */
+.test-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f7f9fc, #ffffff);
+  text-align: center;
+}
+
+.test-title {
+  font-size: 2.8em;
+  color: #004d40;
+  margin-bottom: 20px;
+}
+
+.test-description {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.btn-test-start {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  background: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-test-start:hover {
+  background: #0097a7;
+}
+
+/* Модаль */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-content {
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #999;
+}
+
+.btn-next {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  background: #ff5722;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-next:hover {
+  background: #e64a19;
+}
+
+
+
+/* Жеңілдіктер бөлімі */
+.discounts {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
+  text-align: center;
+}
+
+.discount-title {
+  font-size: 2.8em;
+  color: #004d40;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.discount-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+.discount-card {
+  flex: 0 0 300px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.discount-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.discount-card h3 {
+  font-size: 1.5em;
+  color: #00796b;
+}
+
+.discount-card p {
+  font-size: 1.2em;
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.btn-discount {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1em;
+  background: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-discount:hover {
+  background: #0097a7;
+}
+
+/* Slider Scroll Hide */
+.discount-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Біздің дәрігерлер бөлімі */
+.doctors {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f7f9fc);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.doctors-title {
+  font-size: 3em;
+  color: #3d405b;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.doctors-intro {
+  font-size: 1.3em;
+  color: #6c757d;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* Дәрігерлер тізімі */
+.doctors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Дәрігер карточкасы */
+.doctor-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-profile.reverse {
+  flex-direction: row-reverse;
+}
+
+.doctor-profile:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Дәрігер фотосы */
+.doctor-photo {
+  flex: 0 0 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Дәрігер мәліметтері */
+.doctor-details {
+  text-align: left;
+  flex: 1;
+}
+
+.doctor-details h3 {
+  font-size: 1.8em;
+  color: #3d405b;
+  margin-bottom: 10px;
+}
+
+.doctor-specialty {
+  font-size: 1.2em;
+  color: #00796b;
+  margin-bottom: 15px;
+}
+
+.doctor-bio {
+  font-size: 1em;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Толығырақ батырмасы */
+.btn-learn-more {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-learn-more:hover {
+  background: #003d80;
+}
+
+/* Прайс бөлімі */
+.pricing {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f5f7fa);
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-title {
+  font-size: 3em;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.pricing-intro {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+}
+
+/* Бағандар торы */
+.pricing-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Жалпы баған стилі */
+.pricing-column {
+  flex: 1;
+  max-width: 300px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-column:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Түрлі түсті бағандар */
+.basic {
+  background: #e3f2fd;
+}
+
+.premium {
+  background: #ede7f6;
+}
+
+.advanced {
+  background: #e8f5e9;
+}
+
+/* Баған тақырыбы */
+.pricing-header h3 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.pricing-header p {
+  font-size: 1em;
+  color: #34495e;
+}
+
+/* Баға */
+.pricing-price {
+  margin: 20px 0;
+}
+
+.price-main {
+  font-size: 2.2em;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.price-original {
+  font-size: 1.2em;
+  color: #b0bec5;
+  text-decoration: line-through;
+}
+
+/* Батырма */
+.btn-select {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background: #2c3e50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-select:hover {
+  background: #1b2835;
+}
+
+/* Пікірлер кітап */
+.review-book {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.review-page {
+  padding: 20px;
+  display: none; /* Барлық беттер бастапқыда жасырылған */
+}
+
+.review-page.active {
+  display: block; /* Белсенді бет көрінеді */
+}
+
+.review-text {
+  font-size: 1.2em;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+.review-author {
+  font-size: 1em;
+  color: #00796b;
+  font-weight: bold;
+}
+
+/* Басқару батырмалары */
+.book-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.book-controls button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background: #0056b3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.book-controls button:hover {
+  background: #003d80;
+}
+
+/* Пікір қалдыру формасы */
+.review-form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.review-form textarea, .review-form input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.review-form .btn-submit {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background: #2e7d32;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.review-form .btn-submit:hover {
+  background: #1b5e20;
+}
+
+
+/* Нөмір қалдыру формасының сыртқы түрі */
+.contact-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contact-card button {
+  background-color: #00796b;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-card button:hover {
+  background-color: #005f56;
+}
